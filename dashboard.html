@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>IoT - Projeto do dashboard</title>
+  
+</head>
+<body>
+  
+  <h1>Exercícios de Internet das Coisas</h1>
+  <p><a href="./index.html">Projeto da primeira unidade - 6 lâmpadas</a></p>
+  <h2 id="result">Lâmpada</h2>
+  <div class="container">
+    <div class="lampada">
+      <img src="images/Loff.png" id="luz">
+      <section>
+        <button type="button" onclick="liga('luz'); sendToServer(10); mudar()">Ligar</button>
+        <button type="button" onclick="desliga('luz');sendToServer(20); mudar()">Desligar</button>
+      </section>
+    </div>
+
+    <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1456483/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
+    <script src="dash.js"></script>
+  </div>
+</body>
+</html>
