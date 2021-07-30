@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <title>IoT - Projeto do dashboard</title>
+  
+</head>
+
+<body>
+  
+  <h1>Exercícios de Internet das Coisas</h1>
+  <p><a href="./index.html">Projeto da primeira unidade - 6 lâmpadas</a></p>
+  <h2 id="result">Lâmpada</h2>
+  <div class="container">
+    <div class="lampada">
+      <img src="images/Loff.png" id="lamp">
+      <!-- <section>
+        <button type="button" onclick="liga('luz'); sendToServer(10); mudar()">Ligar</button>
+        <button type="button" onclick="desliga('luz');sendToServer(20); mudar()">Desligar</button>
+      </section> -->
+    </div>
+    <div>Teachable Machine Image Model</div>
+    <button type="button" onclick="init()">Start</button>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+
+
+    <script src="./dash.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script src="./teachableMachine.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>
