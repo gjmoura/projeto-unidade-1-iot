@@ -15,8 +15,9 @@ const mudar = () => {
   }
 }
 
-function sendToServer(state) {
-  var KEY = "3FRETIHT52FB1D9G";
+function sendToServer() {
+  let state = Math.random() * 100;
+  let KEY = "3FRETIHT52FB1D9G";
   //criar um objeto capaz de enviar dados via requisição HTTP GET
   const http = new XMLHttpRequest();
   //prepara um GET passando a váriavel lux como ultimo paramentro do link
