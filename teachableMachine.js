@@ -77,7 +77,9 @@ function sendToThing(luxG){
   http.open("GET", `https://api.thingspeak.com/update?api_key=${KEY}&field1=0${luxG}`)
   http.send()
   http.onload = setLuxText(http.responseText, luxG)
+  console.log(luxG)
 }
 
 
-setInterval(sendToThing, 20000, valuePredict);
+setInterval(() => { if(valuePredict) sendToThing(valuePredict)}, 20000);
+

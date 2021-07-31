@@ -3,11 +3,16 @@
   margin: 0 !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100vw;
   height: 100vh;
   background-color: hsl(219, 23%, 27%);
   color: hsl(149, 64%, 92%);
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -15,7 +20,12 @@ body {
   background-color: hsl(217, 96%, 11%);
   display: flex;
   align-items: center;
+
+  display: flex;
+  justify-content: start;
 }
+
+
 .main {
   grid-area: main;
   display: flex;
