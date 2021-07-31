@@ -1,11 +1,11 @@
 
 const liga = (id) => {
-  document.getElementById(id).setAttribute("src", "images/Lon.png");
+  document.getElementById(id).setAttribute("src", "images/on.jpg");
   document.getElementById("result").innerHTML= "Lâmpada Acesa!";
 }
 
 const desliga = (id) => {
-  document.getElementById(id).setAttribute("src", "images/Loff.png");
+  document.getElementById(id).setAttribute("src", "images/off.jpg");
   document.getElementById("result").innerHTML= "Lâmpada Apagada!";
 }
 
