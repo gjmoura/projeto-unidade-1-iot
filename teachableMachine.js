@@ -12,6 +12,10 @@ let model, webcam, labelContainer, maxPredictions;
 
 // Load the image model and setup the webcam
 async function init() {
+    const botao = document.getElementById("botao");
+    const texto = document.getElementById("texto").innerHTML = "Faça uma tesoura com os dedos para acender e uma mão fechada para apagar";
+    botao.remove();
+    console.log(botao)
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
@@ -45,23 +49,23 @@ async function loop() {
 
 // run the webcam image through the image model
 async function predict() {
-    // predict can take in an image, video or canvas html element
-    const prediction = await model.predict(webcam.canvas);
-    for (let i = 0; i < maxPredictions; i++) {
-        const classPrediction =
-            prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-        labelContainer.childNodes[i].innerHTML = classPrediction;
-        valuePredict = prediction[i].probability.toFixed(2);
-        classPredict = prediction[i].className;
-        turnLight(classPredict, valuePredict);
-    }
+  // predict can take in an image, video or canvas html element
+  const prediction = await model.predict(webcam.canvas);
+  for (let i = 0; i < maxPredictions; i++) {
+    const classPrediction =
+      prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+    labelContainer.childNodes[i].innerHTML = classPrediction;
+    valuePredict = prediction[i].probability.toFixed(2);
+    classPredict = prediction[i].className;
+    turnLight(classPredict, valuePredict);
+  }
 }
 
 function turnLight(type, value) {
   if(type === "Mão fechada" && parseFloat(value) > 0.5) {
-    document.getElementById("lamp").src = "images/Loff.png"
+    document.getElementById("lamp").src = "images/off.jpg"
   } else if(type === "Mão tesoura" && parseFloat(value) > 0.5) {
-    document.getElementById("lamp").src = "images/Lon.png"
+    document.getElementById("lamp").src = "images/on.jpg"
   } else {
     console.log("none")
   }
@@ -75,4 +79,5 @@ function sendToThing(luxG){
   http.onload = setLuxText(http.responseText, luxG)
 }
 
-setInterval(sendToThing(valuePredict), 10000);
+
+setInterval(sendToThing, 20000, valuePredict);
