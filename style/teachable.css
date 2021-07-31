@@ -25,6 +25,14 @@ body {
   justify-content: start;
 }
 
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
 
 .main {
   grid-area: main;
